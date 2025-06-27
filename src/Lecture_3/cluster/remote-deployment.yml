@@ -24,12 +24,12 @@ spec:
         resources:
           requests:
             cpu: "1" # minimum number of cpus you want
-            #memory: 5Gi
-            nvidia.com/gpu: 1
+            memory: 5Gi
+            #nvidia.com/gpu: 1
           limits:
-            #cpu: "2" # maximum number of cpus you want
-            #memory: 10Gi # Shut down if it exceeds this RAM
-            nvidia.com/gpu: 1 # Always set limit to gpus, otherwise you get allocated all the available ones
+            cpu: "2" # maximum number of cpus you want
+            memory: 10Gi # Shut down if it exceeds this RAM
+            #nvidia.com/gpu: 1 # Always set limit to gpus, otherwise you get allocated all the available ones
         volumeMounts:
           - name: dsw-pvc
             mountPath: /storage # Mount the persistent volume claim to the container in the path /storage
